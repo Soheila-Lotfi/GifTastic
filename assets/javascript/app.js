@@ -1,9 +1,9 @@
 var movies;
 
-//initialize movies array with some animation movie's name
+//initialize movies array//
 movies=["Toy story","Spider man","Coco", "Moana","Inside Out","Finding Dory","Brave","Tangled","Up","Despicable Me","Big Hero","Minions"];
 
-//display buttons 
+//display buttons on the page//
 function displayButtons(){
 
     $("#buttons-view").empty();
@@ -33,7 +33,7 @@ $("#add-movie").on("click", function(){
 
 });
 
-// show giphys the user clicks on the buttons
+// show giphys //
 
 $(document).on("click",".giphy",displayGiphyInfo);
 
@@ -75,7 +75,7 @@ $.ajax({
 });
 }
 
-// when the user clickes on an image, it moves and then if he clicks agin it stops
+// When the user clickes on an image, it moves and then if he clicks agin it stops//
 $(document.body).on("click", ".giph", function(){
 
     // The attr jQuery method allows us to get or set the value of 
