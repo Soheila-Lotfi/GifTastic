@@ -33,7 +33,7 @@ $("#add-movie").on("click", function(){
 
 });
 
-// show giphys when user clicks on the buttons
+// show giphys the user clicks on the buttons
 
 $(document).on("click",".giphy",displayGiphyInfo);
 
@@ -49,5 +49,16 @@ $.ajax({
 }).then(function(response){
     console.log(queryUrl);
     var giphys=response.data;
+    $.each(giphys, function(i){        // for each items of array run a function
+
+        // get the images
+        var gifImg=$("<img>").attr("src",giphys[i].images.fixed_height_still.url);
+        gifImg.addClass("img-fluid ml-2 mb-1 mt-3")                // add style to the images by adding bootstrap classes
+        gifImg.attr("data-animate",giphys[i].images.fixed_height.url ).attr("data-still", giphys[i].images.fixed_height_still.url).attr("data-state","still");
+        gifImg.addClass("giph");
+
+ 
+
+        })
 });
 }
