@@ -32,3 +32,22 @@ $("#add-movie").on("click", function(){
     displayButtons();   
 
 });
+
+// show giphys when user clicks on the buttons
+
+$(document).on("click",".giphy",displayGiphyInfo);
+
+function displayGiphyInfo(){
+
+$("#giphy-view").empty();
+var movieName=$(this).attr("data-name");
+var queryUrl="https://api.giphy.com/v1/gifs/search?q="+movieName+"&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
+
+$.ajax({
+    url:queryUrl,
+    method:"GET"
+}).then(function(response){
+    console.log(queryUrl);
+    var giphys=response.data;
+});
+}
