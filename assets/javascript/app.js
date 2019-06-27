@@ -17,3 +17,18 @@ function displayButtons(){
     }
 
 }
+displayButtons();      //show buttons on the page when it loads 
+
+
+// render buttons
+// user can add more buttons to the page by providing the animation's name 
+// and clicking the submit button
+
+$("#add-movie").on("click", function(){
+
+    event.preventDefault();                           // prevent submit button from submitting
+    var userInput=$("#movie-input").val().trim();     // take the user input and store it in a variable
+    movies.push(userInput);
+    displayButtons();   
+
+});
