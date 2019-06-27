@@ -84,4 +84,18 @@ $(document.body).on("click", ".giph", function(){
     var dataAnimate=$(this).attr("data-animate");
     var dataStill=$(this).attr("data-still");
 
+    // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+    // Then, set the image's data-state to animate
+    // Else set src to the data-still value
+
+    if (dataState === "still"){
+
+    $(this).attr("src", dataAnimate);
+    $(this).attr("data-state", "animate");
+    } 
+    else{
+    $(this).attr("src", dataStill);
+    $(this).attr("data-state", "still");
+    }
+    
 });
