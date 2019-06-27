@@ -57,7 +57,19 @@ $.ajax({
         gifImg.attr("data-animate",giphys[i].images.fixed_height.url ).attr("data-still", giphys[i].images.fixed_height_still.url).attr("data-state","still");
         gifImg.addClass("giph");
 
- 
+        //git figure to hold the images//
+        var gifFigure=$("<figure>").addClass("figure").css("width", "200px");
+        gifFigure.addClass("ml-2 mb-1 mt-3");
+
+        // gif captions to show the movie's rating//
+        var gifCaption=$("<figcaption>").addClass("figure-caption").css("text-align", "center");
+        gifCaption.text(giphys[i].rating);
+
+        // add images and their captions to the figures
+        gifFigure.append(gifImg, gifCaption)
+
+        // display the figures on the page
+        $("#giphy-view").append(gifFigure);
 
         })
 });
