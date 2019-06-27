@@ -57,7 +57,7 @@ $.ajax({
         gifImg.attr("data-animate",giphys[i].images.fixed_height.url ).attr("data-still", giphys[i].images.fixed_height_still.url).attr("data-state","still");
         gifImg.addClass("giph");
 
-        //git figure to hold the images//
+        //gif figure to hold the images//
         var gifFigure=$("<figure>").addClass("figure").css("width", "200px");
         gifFigure.addClass("ml-2 mb-1 mt-3");
 
@@ -74,3 +74,14 @@ $.ajax({
         })
 });
 }
+
+// when the user clickes on an image, it moves and then if he clicks agin it stops
+$(document.body).on("click", ".giph", function(){
+
+    // The attr jQuery method allows us to get or set the value of 
+    //any attribute on our HTML element
+    var dataState=$(this).attr("data-state");
+    var dataAnimate=$(this).attr("data-animate");
+    var dataStill=$(this).attr("data-still");
+
+});
